@@ -1,9 +1,15 @@
-name: Hello world
+name: Manual Hello Workflow
+
 on:
+  # 1. Correct syntax for manual trigger
   workflow_dispatch:
 
 jobs:
   say-hello-inline-bash:
-    runs-on: macos latest
+    # 2. Correct runner name: use a hyphen and 'latest' is usually preferred
+    runs-on: macos-latest
+    
     steps:
-      -run:echo"Hello world"
+      - name: Run inline Bash command
+        # 3. Correct syntax: 'run' is a keyword, and the command needs to be quoted or spaced correctly
+        run: echo "Hello world"
